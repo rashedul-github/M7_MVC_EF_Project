@@ -1,0 +1,14 @@
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\Models.dll.config
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\Models.dll
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\Models.pdb
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\EntityFramework.dll
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\EntityFramework.SqlServer.dll
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\EntityFramework.xml
+G:\module_07\EF_Project\EF_Project\Models\bin\Debug\EntityFramework.SqlServer.xml
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.csprojAssemblyReference.cache
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.Migrations.InitialCreate.resources
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.csproj.GenerateResource.cache
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.csproj.CopyComplete
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.dll
+G:\module_07\EF_Project\EF_Project\Models\obj\Debug\Models.pdb

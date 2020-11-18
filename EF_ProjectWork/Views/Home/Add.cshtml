@@ -1,0 +1,103 @@
+﻿@model Models.tables
+@{
+    ViewBag.Title = "Add";
+}
+
+<h4 class="alert alert-light">Add Project</h4>
+<div id="msg">
+
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.Client.ClientName, new { @class = "col-2 col-form-label-sm text-right" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Content.Client.ClientName, new { @class = "form-control form-control-sm" })
+            @Html.ValidationMessageFor(x => x.Content.Client.ClientName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.Project.ProjectName, new { @class = "col-2 col-form-label-sm text-right" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Content.Project.ProjectName, new { @class = "form-control form-control-sm" })
+            @Html.ValidationMessageFor(x => x.Content.Project.ProjectName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.WorkCarriedOut, new { @class = "col-2 col-form-label-sm text-right" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Content.WorkCarriedOut, new { @class = "form-control form-control-sm" })
+            @Html.ValidationMessageFor(x => x.Content.WorkCarriedOut, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.EstimatedCost, new { @class = "col-2 col-form-label-sm text-right" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Content.EstimatedCost, new { @class = "form-control form-control-sm" })
+            @Html.ValidationMessageFor(x => x.Content.EstimatedCost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.StartDate, new { @class = "col-form-label col-form-label-sm col-2 text-right" })
+        <div class="col-4">
+            <div class="input-group" id="join">
+                @Html.TextBoxFor(x => x.Content.StartDate, new { @class = "form-control form-control-sm", @placeholder = "yyyy-mm-dd" })
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(x => x.Content.StartDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Content.EndDate, new { @class = "col-form-label col-form-label-sm col-2 text-right" })
+        <div class="col-4">
+            <div class="input-group" id="join1">
+                @Html.TextBoxFor(x => x.Content.EndDate, new { @class = "form-control form-control-sm", @placeholder = "yyyy-mm-dd" })
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(x => x.Content.EndDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-4 offset-2">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save"> save</i></button>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-4 offset-2">
+            <a href="@Url.Action("Index","Home")" class="btn-link"> Back to home</a>
+        </div>
+    </div>
+}
+
+@section styles{
+
+    <link href="~/Content/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(document).ready(() => {
+            $("#join input").datepicker(
+                {
+                    format: "yyyy-mm-dd"
+                }
+            );
+        });
+        $(document).ready(() => {
+            $("#join1 input").datepicker(
+                {
+                    format: "yyyy-mm-dd"
+                }
+            );
+        });
+    </script>
+}
+

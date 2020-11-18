@@ -1,0 +1,15 @@
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\DAL.dll.config
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\DAL.dll
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\DAL.pdb
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\EntityFramework.dll
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\Models.dll
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\Models.pdb
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\Models.dll.config
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\EntityFramework.xml
+G:\module_07\EF_Project\EF_Project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\module_07\EF_Project\EF_Project\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+G:\module_07\EF_Project\EF_Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+G:\module_07\EF_Project\EF_Project\DAL\obj\Debug\DAL.csproj.CopyComplete
+G:\module_07\EF_Project\EF_Project\DAL\obj\Debug\DAL.dll
+G:\module_07\EF_Project\EF_Project\DAL\obj\Debug\DAL.pdb

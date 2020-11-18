@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Models.Project>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4 class="alert alert-light">Project List</h4>
+
+<table class="table table-bordered table-striped">
+    <thead class="bg-success">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.ProjectId)</th>
+            <th>@Html.DisplayNameFor(x => x.ProjectName)</th>
+            <th>@Html.DisplayNameFor(x => x.Client.ClientName)</th>
+            <th>
+                <a href="@Url.Action("Create","Projects")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x => p.ProjectId)</td>
+            <td>@Html.DisplayFor(x => p.ProjectName)</td>
+            <td>@Html.DisplayFor(x => p.Client.ClientName)</td>
+            <td>
+                <a href="@Url.Action("Edit","Projects",new { id=p.ProjectId})" class="btn btn-outline-primary btn-sm"><i class="fa fa-pencil"></i></a>
+                <a href="@Url.Action("Delete","Projects",new { id=p.ProjectId})" class="btn btn-outline-warning btn-sm"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Models.Content>
+
+
+
+<div class="col-12">
+    <br />
+    <h4 class="alert alert-info">Project Name: @ViewBag.ProjectName</h4>
+</div>
+<table class="table table-bordered table-striped">
+    <thead class="bg-success">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Client.ClientName)</th>
+            <th>@Html.DisplayNameFor(x => x.WorkCarriedOut)</th>
+            <th>@Html.DisplayNameFor(x => x.EstimatedCost)</th>
+            <th>@Html.DisplayNameFor(x => x.StartDate)</th>
+            <th>@Html.DisplayNameFor(x => x.EndDate)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var c in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x => c.Client.ClientName)</td>
+            <td>@Html.DisplayFor(x => c.WorkCarriedOut)</td>
+            <td>@Html.DisplayFor(x => c.EstimatedCost)</td>
+            <td>@Html.DisplayFor(x => c.StartDate)</td>
+            <td>@Html.DisplayFor(x => c.EndDate)</td>
+        </tr>
+        }
+    </tbody>
+</table>

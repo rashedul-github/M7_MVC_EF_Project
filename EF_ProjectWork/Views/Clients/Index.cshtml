@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Models.Client>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4 class="alert alert-light">Client List</h4>
+
+<table class="table table-bordered table-striped">
+    <thead class="bg-success">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.ClientId)</th>
+            <th>@Html.DisplayNameFor(x => x.ClientName)</th>
+            <th>
+                <a href="@Url.Action("Create","Clients")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var c in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x => c.ClientId)</td>
+            <td>@Html.DisplayFor(x => c.ClientName)</td>
+            <td>
+                <a href="@Url.Action("Edit","Clients",new { id=c.ClientId})" class="btn btn-outline-primary btn-sm"><i class="fa fa-pencil"></i></a>
+                <a href="@Url.Action("Delete","Clients",new { id=c.ClientId})" class="btn btn-outline-warning btn-sm"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

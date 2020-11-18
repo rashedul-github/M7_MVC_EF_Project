@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Models.Content>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4 class="alert alert-light">Project Content</h4>
+
+<table class="table table-bordered table-striped">
+    <thead class="bg-success">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.ContentId)</th>
+            <th>@Html.DisplayNameFor(x => x.Client.ClientName)</th>
+            <th>@Html.DisplayNameFor(x => x.Project.ProjectName)</th>
+            <th>@Html.DisplayNameFor(x => x.StartDate)</th>
+            <th>@Html.DisplayNameFor(x => x.EndDate)</th>
+            <th>@Html.DisplayNameFor(x => x.WorkCarriedOut)</th>
+            <th>@Html.DisplayNameFor(x => x.EstimatedCost)</th>
+            <th>
+                <a href="@Url.Action("Create","Contents")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x => c.ContentId)</td>
+            <td>@Html.DisplayFor(x => c.Client.ClientName)</td>
+            <td>@Html.DisplayFor(x => c.Project.ProjectName)</td>
+            <td>@Html.DisplayFor(x => c.StartDate)</td>
+            <td>@Html.DisplayFor(x => c.EndDate)</td>
+            <td>@Html.DisplayFor(x => c.WorkCarriedOut)</td>
+            <td>@Html.DisplayFor(x => c.EstimatedCost)</td>
+            <td>
+                <a href="@Url.Action("Edit","Contents",new { id=c.ContentId})" class="btn btn-outline-primary btn-sm"><i class="fa fa-pencil"></i></a>
+                <a href="@Url.Action("Delete","Contents",new { id=c.ContentId})" class="btn btn-outline-warning btn-sm"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

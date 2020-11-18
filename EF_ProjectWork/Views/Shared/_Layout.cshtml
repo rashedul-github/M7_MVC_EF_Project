@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -EF6-Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/umd/popper.js"></script>
+    <style>
+        body {
+            padding-top: 70px;
+            background-color: #fbecec;
+            font-family: 'Roboto',Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div class="navbar navbar-dark bg-success navbar-expand-md fixed-top border-bottom">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href='@Url.Action("Index","Home")' class="navbar-brand"><img src="~/Images/brand1.svg" width="30"/> ABC Cor.</a>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav">
+                    
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Expand me!
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @Html.ActionLink("Clients", "Index", "Clients", new { }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Projects", "Index", "Projects", new { }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Contents", "Index", "Contents", new { }, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item"><a href="@Url.Action("Logout","Accounts")" class="nav-link"><i class="fa fa-sign-out" aria-hidden="true"> Logoff</i></a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a href="@Url.Action("Login","Accounts")" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"> Login</i></a></li>
+                        <li class="nav-item"><a href="@Url.Action("Register","Accounts")" class="nav-link"><i class="fa fa-arrow-circle-right" aria-hidden="true"> Register</i></a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="min-height:440px;">
+        @RenderBody()
+    </div>
+    <footer class="container">
+        <div class="card border-light" style="background-color: #fbecec;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="card-text">&copy;@DateTime.Now.Year, <img src="~/Images/brand1.svg" width="20" /> ABC Cor.
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="card-text"><i class="fa fa-hand-peace-o" aria-hidden="true"> Md Rashedul Islam</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-3.5.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

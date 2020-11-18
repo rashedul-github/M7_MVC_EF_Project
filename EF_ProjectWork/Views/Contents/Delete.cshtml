@@ -1,0 +1,29 @@
+﻿@model Models.Content
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x =>x.ContentId)
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header" style="background-color:#ffd868;">
+            <h3>Are you sure to delete this?</h3>
+        </div>
+        <div class="card-body" style="background-color:#7fcd91;">
+            <h5 class="card-title">
+                Requisted Name: @Model.Client.ClientName<br />
+                Project Name: @Model.Project.ProjectName<br />
+                Work Carried Out: @Model.WorkCarriedOut<br />
+                Estimated Cost: @Model.EstimatedCost.ToString("0.00")<br />
+                Start Date: @Model.StartDate.ToString("dd-MM-yyyy")<br />
+                End Date: @Model.EndDate.ToString("dd-MM-yyyy")<br />
+            </h5>
+            <p class="card-link">
+                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Delete</i></button>
+            </p>
+            <a href="@Url.Action("Index","Contents")" class="card-link">Back to list</a>
+        </div>
+    </div>
+}
